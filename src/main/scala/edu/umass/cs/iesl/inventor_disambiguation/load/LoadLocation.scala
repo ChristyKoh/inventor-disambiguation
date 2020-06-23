@@ -39,5 +39,5 @@ object LoadLocation extends TabSeparatedFileLoader[Location]{
 
   override def skipFirstLine: Boolean = true
 
-  override def expectedLineLengths: Set[Int] = Set(5)
+  override def expectedLineLengths: Set[Int] = Set(6)
 }

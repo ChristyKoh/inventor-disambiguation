@@ -28,5 +28,5 @@ object LoadPatent extends TabSeparatedFileLoader[Patent]{
 
   override def skipFirstLine: Boolean = true
 
-  override def expectedLineLengths: Set[Int] = Set(10)
+  override def expectedLineLengths: Set[Int] = Set(11)
 }
