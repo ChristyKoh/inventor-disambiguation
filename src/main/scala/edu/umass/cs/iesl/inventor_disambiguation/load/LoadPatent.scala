@@ -20,11 +20,24 @@
 
 package edu.umass.cs.iesl.inventor_disambiguation.load
 
+import edu.umass.cs.iesl.inventor_disambiguation._
 import edu.umass.cs.iesl.inventor_disambiguation.data_structures.Patent
 
 object LoadPatent extends TabSeparatedFileLoader[Patent]{
-  override def parse(split: Array[String]): Option[Patent] =
-    Some(new Patent(split(0),split(1),split(2),split(3),split(4),split(5),split(6),split(7),split(8),split(9)))
+  override def parse(split: Array[String]): Option[Patent] = {
+    val id = split(0).trimQuotesBegEnd()
+    val typ = split(1).trimQuotesBegEnd()
+    val number = split(2).trimQuotesBegEnd()
+    val country = split(3).trimQuotesBegEnd()
+    val date = split(4).trimQuotesBegEnd()
+    val abstr = split(5).trimQuotesBegEnd()
+    val title = split(6).trimQuotesBegEnd()
+    val kind = split(7).trimQuotesBegEnd()
+    val numClaims = split(8).trimQuotesBegEnd()
+    val filename = split(9).trimQuotesBegEnd()
+    val withdrawn = split(10).trimQuotesBegEnd()
+    Some(new Patent(id, typ, number, country, date, abstr, title, kind, numClaims, filename))
+  }
 
   override def skipFirstLine: Boolean = true
 

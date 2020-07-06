@@ -88,6 +88,10 @@ package object inventor_disambiguation {
     def trimBegEnd() = {
       string.replaceAll("^\\s+|\\s+$","")
     }
+
+    def trimQuotesBegEnd(): String = {
+      string.replaceAll("^\"+|\"$", "")
+    }
     
     def noneIfNULL = noneIfIn(Set("NULL"))
     
