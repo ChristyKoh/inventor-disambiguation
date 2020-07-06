@@ -142,9 +142,9 @@ trait DelimitedFileLoader[T] {
 
 trait TabSeparatedFileLoader[T] extends DelimitedFileLoader[T] {
   
-  def delimiter = "\t"
-  
-} 
+  def delimiter = """\t(?=[^"]*([^"]*"[^"]*")*[^"]*$)"""
+}
+
 
 trait CommaSeparateFileLoader[T] extends DelimitedFileLoader[T] {
 
