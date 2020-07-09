@@ -10,7 +10,7 @@ mkdir -p data/embedding/
 
 java -Xmx40G -cp target/inventor_disambiguation-1.0-SNAPSHOT-jar-with-dependencies.jar \
   edu.umass.cs.iesl.inventor_disambiguation.process.GatherEmbeddingTrainingData \
- --patent-file=data/patent.csv \
+ --patent-file=data/patent.tsv \
  --num-threads=20 \
  --output=data/embedding/training-data.txt
  
